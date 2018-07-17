@@ -4,13 +4,18 @@ class TileDisplay extends Component {
     render() {
         var myStyle = {
             color: '#FF0000',
-            background:'#eeeeee',
+            background: '#eeeeee',
             width: 300,
             height: 300
         }
+        var that = this;
         return (
             <div style={myStyle}>
-                {this.props.completeResponse.categories[0]}
+                <ul>
+                    {this.props.completeResponse.categories != undefined && that.props.completeResponse.categories.map(post =>
+                        <li key={post.id}>{post.name}</li>
+                    )}
+                </ul>
             </div>
         )
     }
