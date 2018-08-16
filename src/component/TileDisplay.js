@@ -11,11 +11,9 @@ class TileDisplay extends Component {
         var that = this;
         return (
             <div style={myStyle}>
-                <ul>
-                    {this.props.completeResponse.categories != undefined && that.props.completeResponse.categories.map(post =>
-                        <li key={post.id}>{post.name}</li>
-                    )}
-                </ul>
+                {this.props.completeResponse.subCategories !== undefined && that.props.completeResponse.subCategories.map((post,index) =>
+                    (post.id == this.props.selectedSubCatVal) ? <div key={'mykey' + index}>{post.images !== undefined && post.images.map((post1,index) => <img  key={'mykey' + index} src={post1.url} alt={post1.url}></img>)}</div> : ""
+                )}
             </div>
         )
     }

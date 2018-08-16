@@ -10,8 +10,20 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      catVal: 1,
+      subCatVal:4
     };
+  }
+  myCallBack = (datafromchild,datafromSubchild) => {
+    //console.log("datafromchild=======" + datafromchild);
+    this.setState({catVal:datafromchild});
+    this.setState({subCatVal:datafromSubchild})
+  }
+  myCallBack1 = (datafromSubchild) => {
+   // console.log("datafromSubchild=======" + datafromSubchild);
+    this.setState({subCatVal:datafromSubchild})
+   // console.log("datafromSubchild=======" + this.state.subCatVal);
   }
   componentDidMount() {
     var that = this;
@@ -27,14 +39,14 @@ class App extends Component {
         console.log("ERROR");
       }
     })
-    console.log('gggggg====='+this.state.data);
+    console.log('gggggg=====' + this.state.data);
   }
   render() {
     return (
       <div className="App">
-        <CategoryComp completeResponse1={this.state.data}/>
-        <SubCatComp completeResponse2={this.state.data}/>
-        <TileDisplay completeResponse={this.state.data} />
+        <CategoryComp completeResponse1={this.state.data} childData={this.myCallBack} />
+        <SubCatComp completeResponse2={this.state.data} selectedCatVal={this.state.catVal} subChildData={this.myCallBack1}/>
+        <TileDisplay completeResponse={this.state.data} selectedSubCatVal={this.state.subCatVal}/>
       </div>
     );
   }

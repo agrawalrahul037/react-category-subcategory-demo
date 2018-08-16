@@ -26,6 +26,12 @@ export const myConfig = {
                     },
                     {
                         "url": "../images/2.jpg"
+                    },
+                    {
+                        "url": "../images/2.jpg"
+                    },
+                    {
+                        "url": "../images/2.jpg"
                     }
                 ]
             },
@@ -51,7 +57,7 @@ export const myConfig = {
                         "url": "../images/1.jpg"
                     },
                     {
-                        "url": "../images/2.jpg"
+                        "url": "../images/1.jpg"
                     }
                 ]
             },
@@ -77,7 +83,7 @@ export const myConfig = {
                         "url": "../images/1.jpg"
                     },
                     {
-                        "url": "../images/2.jpg"
+                        "url": "../images/1.jpg"
                     }
                 ]
             },
