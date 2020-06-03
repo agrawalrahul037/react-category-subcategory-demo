@@ -28,7 +28,7 @@ class App extends Component {
   componentDidMount() {
     var that = this;
     $.ajax({
-      url: 'https://jsonplaceholder.typicode.com/users',
+      url: 'http://www.mocky.io/v2/5ed741b13200002b002745dc',
       success(response) {
         response = myConfig.stubData;
         that.setState({
